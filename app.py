@@ -13,7 +13,9 @@ import plotly.graph_objects as go
 # ==============================
 # 🔐 API KEY
 # ==============================
-#genai.configure(api_key=API_KEY)
+API_KEY = st.secrets["GEMINI_API_KEY"]
+genai.configure(api_key=API_KEY)
+
 model = genai.GenerativeModel('gemini-3-flash-preview')
 
 # ==============================
