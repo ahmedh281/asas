@@ -298,27 +298,33 @@ color: #000 !important;             /* Dark text color for contrast */
     margin: 0.5em 0px !important;
     border-color: #f5f5f5 !important;
 }       
-/* إخفاء القائمة العلوية وأيقونة الـ Streamlit بالكامل */
-    header[data-testid="stHeader"] {
+
+
+
+/* 1. إخفاء رأس الصفحة والطبقات الشفافة المرتبطة به */
+    header[data-testid="stHeader"], 
+    .stAppHeader,
+    [data-testid="stDecoration"] {
         display: none !important;
+        height: 0 !important;
+        width: 0 !important;
     }
-    
-    /* إخفاء القائمة الجانبية المزعجة وأيقوناتها (اختياري، جربه إذا لزم الأمر) */
-    /*
-    div[data-testid="stSidebar"] {
-        display: none !important;
-    }
-    */
-    
-    /* إخفاء الـ Footer أو الماركة المائية أسفل الشاشة */
-    div[data-testid="stFooter"] {
+
+    /* 2. إخفاء أي قائمة جانبية حتى لو كانت مغلقة (تأخذ مساحة أحياناً) */
+    [data-testid="stSidebarNav"], 
+    [data-testid="stSidebar"] {
         display: none !important;
     }
 
-    /* توسيع المحتوى الأساسي ليشمل المساحة الفارغة في الأعلى */
-    .block-container {
-        padding-top: 1rem !important; /* تقليل المساحة الفارغة فوق أول عنصر */
-        padding-bottom: 0rem !important;
+    /* 3. إجبار حاوية المحتوى على أخذ الشاشة بالكامل من الأعلى */
+    .main .block-container {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    /* 4. إلغاء أي "تغطية" أو Overlay قد تظهر في وضع التابلت */
+    .stApp > div:first-child {
+        padding-top: 0 !important;
     }
 </style>
 """, unsafe_allow_html=True)
