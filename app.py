@@ -298,6 +298,14 @@ color: #000 !important;             /* Dark text color for contrast */
     margin: 0.5em 0px !important;
     border-color: #f5f5f5 !important;
 }       
+#MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            /* هذا الجزء يقلل المساحة الفارغة في الأعلى */
+            .block-container {
+                padding-top: 1rem;
+                padding-bottom: 0rem;
+            }
 </style>
 """, unsafe_allow_html=True)
 st.image("asset/images/ASAS.png", 
