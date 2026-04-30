@@ -508,7 +508,7 @@ elif input_text is None:
 # ==============================
 # 📱 QR CODE
 # ==============================
-app_url = "https://asas.streamlit.app"  # غيرها بعد النشر
+app_url = "https://newasas.streamlit.app"  # غيرها بعد النشر
 
 qr = qrcode.make(app_url)
 buf = io.BytesIO()
