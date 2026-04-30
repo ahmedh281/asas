@@ -298,14 +298,28 @@ color: #000 !important;             /* Dark text color for contrast */
     margin: 0.5em 0px !important;
     border-color: #f5f5f5 !important;
 }       
-#MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            /* هذا الجزء يقلل المساحة الفارغة في الأعلى */
-            .block-container {
-                padding-top: 1rem;
-                padding-bottom: 0rem;
-            }
+/* إخفاء القائمة العلوية وأيقونة الـ Streamlit بالكامل */
+    header[data-testid="stHeader"] {
+        display: none !important;
+    }
+    
+    /* إخفاء القائمة الجانبية المزعجة وأيقوناتها (اختياري، جربه إذا لزم الأمر) */
+    /*
+    div[data-testid="stSidebar"] {
+        display: none !important;
+    }
+    */
+    
+    /* إخفاء الـ Footer أو الماركة المائية أسفل الشاشة */
+    div[data-testid="stFooter"] {
+        display: none !important;
+    }
+
+    /* توسيع المحتوى الأساسي ليشمل المساحة الفارغة في الأعلى */
+    .block-container {
+        padding-top: 1rem !important; /* تقليل المساحة الفارغة فوق أول عنصر */
+        padding-bottom: 0rem !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 st.image("asset/images/ASAS.png", 
